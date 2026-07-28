@@ -1,82 +1,13 @@
+@font-face {
+    font-family: "Cairo";
+    src: url("fonts/Cairo-VariableFont_slnt,wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:"Cairo",sans-serif;
 }
-
-body{
-    background:#08111f;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background-image:
-    radial-gradient(circle at top,#12345c 0%,#08111f 70%);
-}
-
-.container{
-    width:90%;
-    max-width:420px;
-    background:#101b2f;
-    border:1px solid #1f3b63;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(0,170,255,.25);
-}
-
-h1{
-    font-size:42px;
-    color:#46d4ff;
-    margin-bottom:10px;
-    text-shadow:0 0 15px #46d4ff;
-}
-
-p{
-    color:#b8c9e5;
-    margin-bottom:25px;
-}
-
-input{
-    width:100%;
-    padding:16px;
-    border:none;
-    outline:none;
-    border-radius:12px;
-    background:#182742;
-    color:white;
-    font-size:18px;
-    margin-bottom:18px;
-}
-
-input::placeholder{
-    color:#7f93b8;
-}
-
-button{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(90deg,#2d7dff,#2fd8ff);
-    color:white;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 20px #33ccff;
-}
-
-#message{
-    display:none;
-    margin-top:20px;
-    padding:15px;
-    border-radius:12px;
-    font-weight:bold;
-      }
