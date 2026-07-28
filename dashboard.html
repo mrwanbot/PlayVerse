@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlayVerse Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>PLAYVERSE</h1>
+
+<h2 id="playerName"></h2>
+
+<div class="card">
+
+<h3>🟢 Server Online</h3>
+
+<p>Server : BlockHub</p>
+
+<p>Version : 1.21.11</p>
+
+<p>Players : 18 / 100</p>
+
+<p>Ping : 23 ms</p>
+
+<p>Edition : Java + Bedrock</p>
+
+<p>MOTD : Welcome to BlockHub</p>
+
+</div>
+
+<button onclick="copyIP()">
+📋 Copy IP
+</button>
+
+<button onclick="copyPort()">
+📋 Copy Port
+</button>
+
+<button class="join">
+🎮 Join Minecraft
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("playerName").innerHTML =
+"Hi, " + params.get("player");
+
+function copyIP(){
+
+navigator.clipboard.writeText("play.blockhub.com");
+
+show("✅ IP Copied!");
+
+}
+
+function copyPort(){
+
+navigator.clipboard.writeText("19132");
+
+show("✅ Port Copied!");
+
+}
+
+function show(text){
+
+let m=document.getElementById("message");
+
+m.style.display="block";
+
+m.style.background="#163326";
+
+m.style.border="2px solid #2dd36f";
+
+m.style.color="#9effc8";
+
+m.innerHTML=text;
+
+setTimeout(()=>{
+
+m.style.display="none";
+
+},2500);
+
+}
+
+</script>
+
+</body>
+
+</html>
