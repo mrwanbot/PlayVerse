@@ -1,0 +1,43 @@
+.card{
+    margin-top:20px;
+    background:#121f35;
+    border:1px solid #2d5cff;
+    border-radius:18px;
+    padding:20px;
+    text-align:left;
+    box-shadow:0 0 20px rgba(50,120,255,.25);
+}
+
+.card h3{
+    color:#45d9ff;
+    margin-bottom:15px;
+}
+
+.info{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.info:last-child{
+    border-bottom:none;
+}
+
+.value{
+    color:#46d4ff;
+    font-weight:bold;
+}
+
+.avatar{
+    width:110px;
+    height:110px;
+    border-radius:18px;
+    display:block;
+    margin:20px auto;
+    box-shadow:0 0 20px #3aa8ff;
+}
+
+.join{
+    margin-top:20px;
+}
