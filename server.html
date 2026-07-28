@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlayVerse | Join Minecraft</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>PLAYVERSE</h1>
+
+<p id="welcome"></p>
+
+<input
+type="text"
+id="server"
+placeholder="Server Name">
+
+<button onclick="joinServer()">
+
+Join Minecraft
+
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+
+const player=params.get("player");
+
+document.getElementById("welcome").innerHTML="Hi, "+player;
+
+function joinServer(){
+
+let server=document.getElementById("server").value.trim();
+
+let message=document.getElementById("message");
+
+if(server==""){
+
+message.style.display="block";
+
+message.style.background="#3a1418";
+
+message.style.border="2px solid #ff4d5d";
+
+message.style.color="#ffb3ba";
+
+message.innerHTML="❌ Please enter server name.";
+
+return;
+
+}
+
+if(server.toLowerCase()!="blockhub"){
+
+message.style.display="block";
+
+message.style.background="#3a1418";
+
+message.style.border="2px solid #ff4d5d";
+
+message.style.color="#ffb3ba";
+
+message.innerHTML="❌ Server not found.";
+
+return;
+
+}
+
+window.location.href="dashboard.html?player="+player;
+
+}
+
+</script>
+
+</body>
+  </html>
