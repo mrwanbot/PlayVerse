@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PlayVerse | Join Minecraft</title>
+<title>PlayVerse | Server</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.png">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/server.css">
 
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <div class="container">
+
+<img src="assets/logo.png" class="logo">
 
 <h1>PLAYVERSE</h1>
 
@@ -21,70 +30,49 @@
 
 <input
 type="text"
-id="server"
-placeholder="Server Name">
+id="serverName"
+placeholder="Enter Server Name"
+autocomplete="off">
 
-<button onclick="joinServer()">
+<button id="joinServer">
 
 Join Minecraft
 
 </button>
 
-<div id="message"></div>
+<div id="loading">
+
+<div class="loader"></div>
+
+<span>
+
+Checking server...
+
+</span>
+
+</div>
+
+<div id="error">
+
+❌ Server not found.
+
+</div>
 
 </div>
 
 <script>
 
-const params=new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 
-const player=params.get("player");
+const player = params.get("player");
 
-document.getElementById("welcome").innerHTML="Hi, "+player;
-
-function joinServer(){
-
-let server=document.getElementById("server").value.trim();
-
-let message=document.getElementById("message");
-
-if(server==""){
-
-message.style.display="block";
-
-message.style.background="#3a1418";
-
-message.style.border="2px solid #ff4d5d";
-
-message.style.color="#ffb3ba";
-
-message.innerHTML="❌ Please enter server name.";
-
-return;
-
-}
-
-if(server.toLowerCase()!="blockhub"){
-
-message.style.display="block";
-
-message.style.background="#3a1418";
-
-message.style.border="2px solid #ff4d5d";
-
-message.style.color="#ffb3ba";
-
-message.innerHTML="❌ Server not found.";
-
-return;
-
-}
-
-window.location.href="dashboard.html?player="+player;
-
-}
+document.getElementById("welcome").innerHTML =
+"Hi, " + player;
 
 </script>
 
+<script src="js/server.js"></script>
+
 </body>
-  </html>
+
+</html>
