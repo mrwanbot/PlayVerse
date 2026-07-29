@@ -1,1 +1,284 @@
+/* ===========================
+   PlayVerse Dashboard
+=========================== */
 
+.container{
+
+    width:95%;
+    max-width:950px;
+
+    margin:50px auto;
+
+    animation:fade .6s ease;
+
+}
+
+.card{
+
+    background:#101b30;
+
+    border:1px solid rgba(70,180,255,.25);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:0 0 35px rgba(0,160,255,.25);
+
+}
+
+.avatar{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:20px;
+
+    display:block;
+
+    margin:0 auto 20px;
+
+    border:3px solid #39d0ff;
+
+    box-shadow:0 0 25px rgba(57,208,255,.6);
+
+}
+
+.skin{
+
+    width:200px;
+
+    display:block;
+
+    margin:25px auto;
+
+    filter:drop-shadow(0 0 20px rgba(57,208,255,.5));
+
+}
+
+.card h3{
+
+    text-align:center;
+
+    color:#4fd8ff;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.info:last-child{
+
+    border-bottom:none;
+
+}
+
+.label{
+
+    color:#c8d6ea;
+
+    font-size:17px;
+
+}
+
+.value{
+
+    color:#4fd8ff;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+.online{
+
+    color:#39ff88;
+
+    font-weight:bold;
+
+}
+
+.offline{
+
+    color:#ff5555;
+
+    font-weight:bold;
+
+}
+
+.join{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#1976ff,#38d9ff);
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.join:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 25px rgba(56,217,255,.7);
+
+}
+
+.copy{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    background:#162642;
+
+    color:white;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.copy:hover{
+
+    background:#22395f;
+
+}
+
+.success{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#123922;
+
+    border:2px solid #2dff88;
+
+    color:#9cffc4;
+
+    text-align:center;
+
+}
+
+.error{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#391616;
+
+    border:2px solid #ff4d5d;
+
+    color:#ffb6be;
+
+    text-align:center;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .avatar{
+
+        width:100px;
+
+        height:100px;
+
+    }
+
+    .skin{
+
+        width:150px;
+
+    }
+
+    h1{
+
+        font-size:32px;
+
+    }
+
+    .info{
+
+        flex-direction:column;
+
+        gap:6px;
+
+        text-align:center;
+
+    }
+
+}ى
