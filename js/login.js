@@ -1,164 +1,49 @@
 /* ===========================
-   PlayVerse Login Page
+   PlayVerse Login
 =========================== */
 
-.container{
+const loginButton = document.getElementById("loginButton");
+const username = document.getElementById("username");
+const loading = document.getElementById("loading");
+const error = document.getElementById("error");
 
-    width:90%;
-    max-width:450px;
+loginButton.addEventListener("click", login);
 
-    margin:70px auto;
+username.addEventListener("keypress", function(e){
 
-    padding:40px;
+    if(e.key === "Enter"){
+        login();
+    }
 
-    border-radius:25px;
+});
 
-    background:rgba(14,24,44,.95);
+function login(){
 
-    border:1px solid rgba(70,180,255,.25);
+    const player = username.value.trim();
 
-    box-shadow:0 0 40px rgba(0,160,255,.25);
+    error.style.display = "none";
 
-    text-align:center;
+    if(player.length < 3){
 
-    animation:fade .6s ease;
+        error.innerHTML = "❌ Please enter a valid Minecraft username.";
+        error.style.display = "block";
 
-}
+        return;
 
-.logo{
+    }
 
-    width:90px;
+    loginButton.disabled = true;
 
-    margin-bottom:20px;
+    loading.style.display = "block";
 
-}
+    setTimeout(function(){
 
-h1{
+        loading.style.display = "none";
 
-    color:#46d4ff;
+        window.location.href =
+        "server.html?player=" +
+        encodeURIComponent(player);
 
-    font-size:42px;
-
-    text-shadow:0 0 15px rgba(70,212,255,.7);
-
-}
-
-p{
-
-    color:#b9c8df;
-
-    margin:15px 0 30px;
-
-    font-size:17px;
+    },2000);
 
 }
-
-input{
-
-    width:100%;
-
-    padding:18px;
-
-    border-radius:16px;
-
-    border:1px solid #2b6cff;
-
-    background:#101c30;
-
-    color:#fff;
-
-    font-size:17px;
-
-    outline:none;
-
-    transition:.3s;
-
-}
-
-input:focus{
-
-    border-color:#46d4ff;
-
-    box-shadow:0 0 20px rgba(70,212,255,.35);
-
-}
-
-#loginButton{
-
-    width:100%;
-
-    margin-top:20px;
-
-    padding:17px;
-
-    border:none;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    background:linear-gradient(90deg,#1976ff,#38d9ff);
-
-    color:#fff;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-#loginButton:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 0 20px rgba(56,217,255,.7);
-
-}
-
-#loading{
-
-    display:none;
-
-    margin-top:20px;
-
-    color:#46d4ff;
-
-}
-
-.loader{
-
-    width:35px;
-
-    height:35px;
-
-    margin:0 auto 10px;
-
-    border:4px solid rgba(255,255,255,.2);
-
-    border-top:4px solid #46d4ff;
-
-    border-radius:50%;
-
-    animation:spin 1s linear infinite;
-
-}
-
-#error{
-
-    display:none;
-
-    margin-top:20px;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    background:#351519;
-
-    border:2px solid #ff4d5d;
-
-    color:#ffb3ba;
-
-    animation:shake
