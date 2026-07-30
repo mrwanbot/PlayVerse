@@ -1,67 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PlayVerse | Login</title>
-
-<link rel="icon" href="assets/favicon.png">
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/login.css">
-
-</head>
-
 <body>
 
 <div class="background"></div>
 
 <div class="container">
 
-<img src="assets/logo.png" class="logo">
+    <img src="assets/logo.png" class="logo" alt="PlayVerse Logo">
 
-<h1>PLAYVERSE</h1>
+    <h1>Play Verse</h1>
 
-<p>
-Enter your Minecraft Username
-</p>
+    <p>Create. Host. Play.</p>
 
-<input
-type="text"
-id="username"
-placeholder="Minecraft Username"
-autocomplete="off">
+    <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        autocomplete="off">
 
-<button id="loginButton">
+    <input
+        type="password"
+        id="password"
+        placeholder="Password">
 
-Continue
+    <a href="forgot-password.html" class="forgot">
+        Forgot Password?
+    </a>
 
-</button>
+    <button id="loginButton">
+        Login
+    </button>
 
-<div id="loading">
+    <div class="divider">
+        <span>OR</span>
+    </div>
 
-<div class="loader"></div>
+    <button class="google-btn">
+        Continue with Google
+    </button>
 
-<span>
-Checking Minecraft account...
-</span>
-
-</div>
-
-<div id="error">
-
-❌ Minecraft account not found.
-
-</div>
+    <p class="register">
+        Don't have an account?
+        <a href="register.html">Create Account</a>
+    </p>
 
 </div>
 
 <script src="js/login.js"></script>
 
 </body>
-
-  </html>
