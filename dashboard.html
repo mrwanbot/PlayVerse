@@ -1,113 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PlayVerse | Dashboard</title>
-
-<link rel="icon" href="assets/favicon.png">
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/dashboard.css">
-
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Play Verse</title>
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
-
 <body>
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="logo"><img src="assets/logo.png" alt=""><span>Play Verse</span></div>
+        <nav>
+            <a href="dashboard.html" class="active">🏠 Dashboard</a>
+            <a href="servers.html">🎮 My Servers</a>
+            <a href="create-server.html">➕ Create Server</a>
+            <a href="files.html">📂 File Manager</a>
+            <a href="plugins.html">🧩 Plugins</a>
+            <a href="worlds.html">🌍 Worlds</a>
+            <a href="backups.html">💾 Backups</a>
+            <a href="console.html">🖥 Console</a>
+            <a href="players.html">👥 Players</a>
+            <a href="billing.html">💳 Billing</a>
+            <a href="settings.html">⚙ Settings</a>
+            <a href="support.html">❓ Support</a>
+        </nav>
+        <div class="user-box">
+            <div class="avatar">👤</div><div class="u-info"><b id="userName">Welcome, Steve</b><p>Free Plan</p></div>
+            <button id="logoutBtn" title="Logout">🚪</button>
+        </div>
+    </aside>
 
-<div class="background"></div>
+    <main class="main">
+        <header class="topbar">
+            <div><h1>👋 Welcome, <span id="welcomeName">Steve</span></h1><p>Here's what's happening with your servers today.</p></div>
+            <div class="top-actions"><div class="notif">🔔<span class="dot"></span></div><div class="status-indicator">🟢 All Systems Operational</div></div>
+        </header>
 
-<div class="container">
+        <section class="stats-grid">
+            <div class="stat-card green"><div class="icon">🟢</div><div><h3>Server Status</h3><h2>Offline</h2><p>No active server</p></div></div>
+            <div class="stat-card blue"><div class="icon">📊</div><div><h3>CPU & RAM Usage</h3><h2>0% / 0 MB</h2><div class="bar"><div style="width:0%"></div></div></div></div>
+            <div class="stat-card purple"><div class="icon">🎮</div><div><h3>My Servers</h3><h2 id="serverCount">0</h2><p><a href="create-server.html">Create one</a></p></div></div>
+            <div class="stat-card orange"><div class="icon">💾</div><div><h3>Storage</h3><h2>0 MB / 5 GB</h2><div class="bar"><div style="width:5%"></div></div></div></div>
+            <div class="stat-card teal"><div class="icon">🌐</div><div><h3>Network</h3><h2>0 KB/s</h2><p>Ping: -- ms</p></div></div>
+            <div class="stat-card dark"><div class="icon">📈</div><div><h3>Activity</h3><h2>0 actions</h2><p>Last 24h</p></div></div>
+        </section>
 
-<img src="assets/logo.png" class="logo">
-
-<h1>PLAYVERSE</h1>
-
-<p id="welcomePlayer"></p>
-
-<div class="card">
-
-<img
-id="avatar"
-class="avatar"
-src="https://mc-heads.net/avatar/Steve/150"
-alt="Avatar">
-
-<img
-id="skin"
-class="skin"
-src="https://starlightskins.lunareclipse.studio/render/default"
-alt="Skin">
-
-<h3 id="playerName">Player</h3>
-
-<div class="info">
-<span class="label">Server</span>
-<span class="value" id="serverName">BlockHub</span>
+        <div class="main-grid">
+            <section class="quick-actions">
+                <h2>⚡ Quick Actions</h2>
+                <div class="actions">
+                    <a href="create-server.html" class="action primary"><span>➕</span><b>Create New Server</b><p>Paper, Purpur, Spigot, Vanilla</p></a>
+                    <a href="servers.html" class="action"><span>🎮</span><b>Manage Servers</b></a>
+                    <a href="console.html" class="action"><span>🖥</span><b>Open Console</b></a>
+                    <a href="billing.html" class="action"><span>💳</span><b>Upgrade Plan</b></a>
+                </div>
+            </section>
+            <section class="news">
+                <h2>📢 Latest News</h2>
+                <div class="news-card"><b>🚀 Minecraft 1.21.8 Support Added</b><p>Paper & Purpur 1.21.8 now available for all plans.</p><span>2 days ago</span></div>
+                <div class="news-card"><b>⚡ New EU Node</b><p>Lower latency for Europe players - 20ms average.</p><span>1 week ago</span></div>
+            </section>
+        </div>
+    </main>
 </div>
-
-<div class="info">
-<span class="label">Status</span>
-<span class="online">🟢 Online</span>
-</div>
-
-<div class="info">
-<span class="label">Edition</span>
-<span class="value">Java + Bedrock</span>
-</div>
-
-<div class="info">
-<span class="label">Version</span>
-<span class="value">1.21.11</span>
-</div>
-
-<div class="info">
-<span class="label">Players</span>
-<span class="value">0 / 20</span>
-</div>
-
-<div class="info">
-<span class="label">Ping</span>
-<span class="value">-- ms</span>
-</div>
-
-<div class="info">
-<span class="label">IP</span>
-<span class="value" id="serverIP">
-play.blockhub.net
-</span>
-</div>
-
-<button class="copy" id="copyIP">
-
-📋 Copy Server IP
-
-</button>
-
-<button class="join" id="joinMinecraft">
-
-🎮 Join Minecraft
-
-</button>
-
-<div
-id="message"
-class="success"
-style="display:none;">
-
-IP Copied Successfully!
-
-</div>
-
-</div>
-
-</div>
-
 <script src="js/dashboard.js"></script>
-
 </body>
-
-  </html>
+                                                                                                                                   </html>
