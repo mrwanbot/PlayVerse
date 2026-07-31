@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Server | Play Verse</title>
+    <link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/create-server.css">
+</head>
+<body>
+<div class="dashboard">
+    <aside class="sidebar"><!-- نفس Sidebar ديال dashboard --></aside>
+    <main class="main">
+        <h1>🚀 Create New Server</h1>
+        <p class="sub">Choose your plan, software and world to launch your server in seconds.</p>
+
+        <form id="createServerForm">
+            <!-- الخطة -->
+            <section class="form-section"><h2>💾 Choose Plan</h2>
+                <div class="plan-grid">
+                    <label class="plan-card active"><input type="radio" name="plan" value="free-2gb" checked><div><h3>🆓 Free</h3><h1>2 GB</h1><p>20 Players • Daily Backup</p></div></label>
+                    <label class="plan-card"><input type="radio" name="plan" value="premium-4gb"><div><h3>💎 Premium</h3><h1>4 GB</h1><p>$3.99/mo • Unlimited</p></div></label>
+                    <label class="plan-card"><input type="radio" name="plan" value="premium-6gb"><div><h3>💎 Premium</h3><h1>6 GB</h1><p>$5.99/mo • Very Fast CPU</p></div></label>
+                    <label class="plan-card"><input type="radio" name="plan" value="premium-8gb"><div><h3>👑 Premium</h3><h1>8 GB</h1><p>$7.99/mo • Best Performance</p></div></label>
+                </div>
+            </section>
+
+            <!-- نوع السيرفر -->
+            <section class="form-section"><h2>⚙️ Server Type</h2>
+                <div class="type-grid">
+                    <label class="type-card active"><input type="radio" name="type" value="paper" checked><b>✅ Paper</b><p>Best performance, plugins</p></label>
+                    <label class="type-card"><input type="radio" name="type" value="purpur"><b>✅ Purpur</b><p>Paper fork with more features</p></label>
+                    <label class="type-card"><input type="radio" name="type" value="spigot"><b>✅ Spigot</b><p>Classic, stable</p></label>
+                    <label class="type-card"><input type="radio" name="type" value="vanilla"><b>✅ Vanilla</b><p>Pure Minecraft</p></label>
+                </div>
+            </section>
+
+            <!-- إصدار + عالم + منطقة -->
+            <div class="row-3">
+                <div class="form-section"><h2>🎮 Minecraft Version</h2><select name="version" id="version"><option>1.21.8</option><option>1.21.7</option><option>1.21.6</option><option>1.21.5</option><option>1.20.6</option><option>1.20.4</option><option>1.19.4</option></select></div>
+                <div class="form-section"><h2>🌍 World Type</h2><select name="world"><option>Normal</option><option>Flat</option><option>Large Biomes</option><option>OneBlock</option><option>SkyBlock</option><option>Void</option></select></div>
+                <div class="form-section"><h2>🌐 Region</h2><select name="region"><option>Europe 🇪🇺</option><option>North America 🇺🇸</option><option>Asia 🇸🇬</option></select></div>
+            </div>
+
+            <section class="form-section"><h2>📝 Server Name</h2><input type="text" name="serverName" placeholder="My Epic Server" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_ ]+"></section>
+
+            <button type="submit" id="createBtn" class="btn-create">🚀 Create Server</button>
+            <div id="status" class="status-box"></div>
+        </form>
+    </main>
+</div>
+<script src="js/create-server.js"></script>
+</body>
+</html>
